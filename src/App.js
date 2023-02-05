@@ -35,6 +35,7 @@ function App() {
           </div>
         ))}
       </div>
+      <button onClick={() => setTodos([])}>reset</button>
     </div>
   );
 }
