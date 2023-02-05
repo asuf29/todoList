@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Form
-        onSubmit={(text) => setTodos({ text, complete: false, ...todos })}
+        onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])}
       />
       <div>
         {todos.map(({ text }) => (
