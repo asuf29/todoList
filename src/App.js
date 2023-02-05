@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import Form from "./Form";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
   return (
     <div className="App">
-      <div>count: {count}</div>
-      <button onClick={() => setCount(count + 1)}>+</button>
+      <Form
+        onSubmit={(text) => setTodos({ text, complete: false, ...todos })}
+      />
+      <div>
+        {todos.map(({ text }) => (
+          <div key={text}>{text}</div>
+        ))}
+      </div>
     </div>
   );
 }
